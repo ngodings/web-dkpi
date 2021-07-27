@@ -23,6 +23,7 @@ class CreateMahasiswasTable extends Migration
             $table->string('negara');
             $table->string('surat_uns');
             $table->string('catatan_uns');
+            $table->string('belmawa');
             $table->string('catatan_belmawa');
             $table->string('ktln_kemensetneg');
             $table->string('catatan_setneg');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Models\Mahasiwa;
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class C_Mahasiswa extends Controller
@@ -14,8 +14,8 @@ class C_Mahasiswa extends Controller
      */
     public function index()
     {
-        $mahasiswa = Mahasiswa::all();
-        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
+        $mahasiswas = Mahasiswa::all();
+        return view('mahasiswa.index', ['mahasiswas' => $mahasiswas]);
     }
 
     /**
@@ -40,13 +40,14 @@ class C_Mahasiswa extends Controller
             'nama_mhs' => $request->nama_mhs,
             'jumlah_orang'=> $request->jumlah_orang,
             'unit_kerja'=> $request->unit_kerja,
-            'jangka_waktu'=>$request->jangak_waktu,
+            'jangka_waktu'=>$request->jangka_waktu,
             'tujuan'=>$request->tujuan,
             'negara'=>$request->negara,
             'surat_uns'=>$request->surat_uns,
             'catatan_uns'=>$request->catatan_uns,
-            'catatan_belmawa'=>$request->catatn_belmawa,
-            'ktln_kemensetnag'=>$request->ktln_kemensetneg,
+            'belmawa'=>$request->belmawa,
+            'catatan_belmawa'=>$request->catatan_belmawa,
+            'ktln_kemensetneg'=>$request->ktln_kemensetneg,
             'catatan_setneg'=>$request->catatan_setneg,
             'status'=>$request->status
         ]);
@@ -77,10 +78,10 @@ class C_Mahasiswa extends Controller
     public function edit($id)
     { 
         // mengambil data siswa berdasarkan id yang dipilih
-        $mahasiswa = DB::table('mahasiswa')->where('id',$id)->get(); 
+        $mahasiswas = DB::table('mahasiswas')->where('id',$id)->get(); 
         
         // passing data siswa yang didapat ke view edit.blade.php 
-        return view('mahasiswa.edit',['mahasiswa' => $mahasiswa]);
+        return view('mahasiswa.edit',['mahasiswas' => $mahasiswas]);
     }
 
     /**
@@ -97,13 +98,14 @@ class C_Mahasiswa extends Controller
                 'nama_mhs' => $request->nama_mhs,
                 'jumlah_orang'=> $request->jumlah_orang,
                 'unit_kerja'=> $request->unit_kerja,
-                'jangka_waktu'=>$request->jangak_waktu,
+                'jangka_waktu'=>$request->jangka_waktu,
                 'tujuan'=>$request->tujuan,
                 'negara'=>$request->negara,
                 'surat_uns'=>$request->surat_uns,
                 'catatan_uns'=>$request->catatan_uns,
-                'catatan_belmawa'=>$request->catatn_belmawa,
-                'ktln_kemensetnag'=>$request->ktln_kemensetneg,
+                'belmawa'=>$request->belmawa,
+                'catatan_belmawa'=>$request->catatan_belmawa,
+                'ktln_kemensetneg'=>$request->ktln_kemensetneg,
                 'catatan_setneg'=>$request->catatan_setneg,
                 'status'=>$request->status
             ]);

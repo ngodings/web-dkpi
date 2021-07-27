@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('template.index');
+    return view('template.main');
 });
 
 //Jadwal

@@ -3,33 +3,15 @@
 @section('title', 'Data PDLN Mahasiswa')
 
 @section('content')
-    <!-- Header -->
-    <div class="header bg-success pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                <ol class="breadcrumb breadcrumb-links breadcrumb-da">
-                  <li class="breadcrumb-item"><a href="#">Mahasiswa</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Data PDLN Mahasiswa</li>
-                </ol>
-              </nav>
-            </div>
-            <div class="col-lg-6 col-5 text-right">
-              <a class="btn btn-neutral" href="{{ url('/mahasiswa/create') }}">Tambah Data</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data PDLN Mahasiswa</h1>
-
+                    <div class="card-body">
+				    <a href="mahasiswa/create" class="btn btn-success">Tambah Data</a>
+				    <br/>
+				    <br/>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -54,20 +36,20 @@
                                     </thead class="list">
                                         <tr>
       
-                                    @foreach ($mahasiswa as $row)
-                                        <tr  class="text-light">
+                                    @foreach ($mahasiswas as $row)
+                                        <tr  class="text-dark">
                                                 <td width="5%">{{$loop->iteration}}</td>
-                                                <td>{{$row->nama_mahasiswa}}</td>
+                                                <td>{{$row->nama_mhs}}</td>
                                                 <td>{{$row->tujuan}}</td>
                                                 <td>{{$row->jangka_waktu}}</td>
                                                 <td>{{$row->negara}}</td>
                                                 <td>{{$row->surat_uns}}</td>
                                                 <td>{{$row->catatan_belmawa}}</td>
-                                                <td>{{$row->ktln_kemensetnag}}</td>
+                                                <td>{{$row->ktln_kemensetneg}}</td>
                                                 <td>{{$row->status}}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a class="btn btn-sm btn-icon-only text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
