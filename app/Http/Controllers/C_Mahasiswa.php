@@ -76,11 +76,11 @@ class C_Mahasiswa extends Controller
      */
 
     public function edit($id)
-    { 
+    {
         // mengambil data siswa berdasarkan id yang dipilih
-        $mahasiswas = DB::table('mahasiswas')->where('id',$id)->get(); 
-        
-        // passing data siswa yang didapat ke view edit.blade.php 
+        $mahasiswas = DB::table('mahasiswas')->where('id',$id)->get();
+
+        // passing data siswa yang didapat ke view edit.blade.php
         return view('mahasiswa.edit',['mahasiswas' => $mahasiswas]);
     }
 
@@ -93,7 +93,7 @@ class C_Mahasiswa extends Controller
      */
     public function update(Request $request)
     {
-        Mahasiwa::where('id', $request->id)
+        Mahasiswa::where('id', $request->id)
             ->update([
                 'nama_mhs' => $request->nama_mhs,
                 'jumlah_orang'=> $request->jumlah_orang,
@@ -122,7 +122,7 @@ class C_Mahasiswa extends Controller
     {
         // menghapus data siswa berdasarkan id yang dipilih
         Mahasiswa::where('id',$id)->delete();
-        
+
         // alihkan halaman ke halaman siswa
         return redirect('/mahasiswa');
     }
